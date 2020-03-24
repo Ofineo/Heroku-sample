@@ -1,10 +1,14 @@
 from sqlalchemy import Column, String, create_engine, Integer
 from flask_sqlalchemy import SQLAlchemy
 import json
+import boto3
+
+client = boto3.client(
+       database_path = DATABASE_PATH,
+   )
 
 
-
-database_path = 'postgresql://postgres:postgres@localhost:5432/capstone-test'  # os.environ['DATABASE_URL']
+database_path = client.database_path  # os.environ['DATABASE_URL']
 
 db = SQLAlchemy()
 
