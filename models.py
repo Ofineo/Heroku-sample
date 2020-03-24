@@ -4,7 +4,7 @@ import json
 import boto3
 
 client = boto3.client(
-       database_path = DATABASE_PATH,
+       database_path = DATABASE_URL,
    )
 
 
